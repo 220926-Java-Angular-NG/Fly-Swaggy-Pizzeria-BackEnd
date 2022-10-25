@@ -1,4 +1,6 @@
 .idea
 target
 .properties
+Main.iml
 .iml
+dbConfig.properties
