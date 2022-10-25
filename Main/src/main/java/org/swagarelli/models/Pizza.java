@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 // Pizza class is a model class for the Pizzeria project.
 //
-public class Pizza {
+public class Pizza extends Item{
 
     // Properties
     private String crust;
