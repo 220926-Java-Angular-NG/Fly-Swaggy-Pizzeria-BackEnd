@@ -1,13 +1,13 @@
-package org.swagarelli.Pizzerria;
+package com.swaggarelli.pizzeria;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PizzerriaApplication {
+public class PizzeriaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PizzerriaApplication.class, args);
+		SpringApplication.run(PizzeriaApplication.class, args);
 	}
 
 }
