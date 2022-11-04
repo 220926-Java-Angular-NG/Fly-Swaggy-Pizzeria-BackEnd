@@ -30,12 +30,4 @@ public class Pizza {
     private enum Crust{
         REGULAR, THIN, NO_CRUST
     }
-
-    private enum Sauce{
-        TOMATO, BBQ, ALFREDO, BUFFALO
-    }
-
-    private enum Topping{
-        PEPPERONI, SAUSAGE, MUSHROOMS, BACON, CHICKEN, ONIONS, BELL_PEPPERS, PINEAPPLE, JALAPENOS, HAM, FS_SEASONING
-    }
 }

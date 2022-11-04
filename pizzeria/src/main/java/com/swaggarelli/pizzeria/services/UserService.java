@@ -24,4 +24,16 @@ public class UserService {
         return userRepo.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("User not found with username: " + username));
     }
+
+    /**
+     *
+     * @param user Entity of type User gotten from an API call
+     *             This Function first retrieves the old data from the table, then updates the table
+     * @return an Entity that comprises the old data being replaced
+     */
+    public User updateUser(User user) {
+        User temp = findUserById(user.getUserId()); // get old values
+        userRepo.save(user); //update entity with new values
+        return temp; // return old values
+    }
 }
