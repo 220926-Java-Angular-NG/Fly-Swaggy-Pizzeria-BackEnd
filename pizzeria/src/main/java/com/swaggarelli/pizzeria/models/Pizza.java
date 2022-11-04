@@ -23,7 +23,7 @@ public class Pizza {
 
 
 
-    private enum Size{
+    public enum Size{
         SMALL, MEDIUM, LARGE
     }
 

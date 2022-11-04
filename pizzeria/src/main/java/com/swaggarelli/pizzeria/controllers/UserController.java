@@ -14,13 +14,13 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping
+    @PostMapping("/register")
     public User createUser(@RequestBody User user){
-        return userService.createUser(user);
+        return userService.createUpdateUser(user);
     }
 
     @PostMapping ("/{userID}/edit")
-    public User updateUser(@RequestBody User user){return userService.updateUser(user);}
+    public User updateUser(@RequestBody User user){return userService.createUpdateUser(user);}
 
     // GET localhost:8080/users/1 -> getByUserId
     @GetMapping("/{userId}")

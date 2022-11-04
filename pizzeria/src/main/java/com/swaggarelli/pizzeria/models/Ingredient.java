@@ -17,7 +17,6 @@ import javax.validation.constraints.NotNull;
 public class Ingredient {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer inventoryId;
 
     @Column(unique = true, length = 20)
@@ -27,4 +26,9 @@ public class Ingredient {
     @Min(0)
     @NotNull
     private int stock;
+
+    public boolean setStock(int stock) { // simply throw a false if the stock ever goes below zero
+        this.stock = stock;
+        return this.stock >= 0;
+    }
 }
