@@ -11,7 +11,12 @@ public class UserService {
 
     private final UserRepo userRepo;
 
-    public User createUser(User user){
+    /**
+     * @param user Entity of type User gotten from an API call (if ID has an assigned value within the table update instead)
+     *             This Function first retrieves the old data from the table, then updates the table
+     * @return the new entity (either created or updated)
+     */
+    public User createUpdateUser(User user){
         return userRepo.save(user);
     }
 
@@ -23,17 +28,5 @@ public class UserService {
     public User findUserByUsername(String username){
         return userRepo.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("User not found with username: " + username));
-    }
-
-    /**
-     *
-     * @param user Entity of type User gotten from an API call
-     *             This Function first retrieves the old data from the table, then updates the table
-     * @return an Entity that comprises the old data being replaced
-     */
-    public User updateUser(User user) {
-        User temp = findUserById(user.getUserId()); // get old values
-        userRepo.save(user); //update entity with new values
-        return temp; // return old values
     }
 }
