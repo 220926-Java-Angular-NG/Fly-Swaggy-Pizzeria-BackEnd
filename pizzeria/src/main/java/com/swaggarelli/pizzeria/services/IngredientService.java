@@ -1,8 +1,10 @@
 package com.swaggarelli.pizzeria.services;
 
 import com.swaggarelli.pizzeria.models.*;
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Base;
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Sauce;
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Topping;
 import com.swaggarelli.pizzeria.repos.IngredientRepo;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.swaggarelli.pizzeria.models;
+package com.swaggarelli.pizzeria.models.DTO.ENUM;
 
 /**
  * This Enum is the Base of the Pizza Cheese and Dough IDs for the database

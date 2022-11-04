@@ -4,16 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Collection;
+import java.util.Collections;
 
 @Entity(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +27,6 @@ public class User {
     @NotNull
     private String username;
 
-    @Column(length = 15)
     @NotNull
     private String password;
 
@@ -48,4 +51,42 @@ public class User {
     @Column(length = 5)
     private String zipCode;
 
+    private auth level = auth.CUSTOMER;
+    public enum auth implements GrantedAuthority{
+        CUSTOMER("customer");
+
+        public final String autho;
+        auth(String autho){
+            this.autho = autho;
+        }
+        public String getAuthority() {
+            return this.autho;
+        }
+    }
+    private boolean isActive = true;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Collections.singleton(level);
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return isActive;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return isActive;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return isActive;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return isActive;
+    }
 }
