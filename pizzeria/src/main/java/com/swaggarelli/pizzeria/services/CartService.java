@@ -1,6 +1,9 @@
 package com.swaggarelli.pizzeria.services;
 
 import com.swaggarelli.pizzeria.models.*;
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Base;
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Ingredients;
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Topping;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;

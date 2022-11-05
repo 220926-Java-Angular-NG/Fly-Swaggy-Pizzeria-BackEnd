@@ -1,4 +1,4 @@
-package com.swaggarelli.pizzeria.models;
+package com.swaggarelli.pizzeria.models.DTO.ENUM;
 
 /**
  *

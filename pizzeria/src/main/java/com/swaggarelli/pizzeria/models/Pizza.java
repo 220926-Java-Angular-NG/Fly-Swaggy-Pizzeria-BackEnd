@@ -1,5 +1,7 @@
 package com.swaggarelli.pizzeria.models;
 
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Sauce;
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Topping;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
