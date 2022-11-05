@@ -29,6 +29,11 @@ public class UserController {
         return userService.findUserById(userId);
     }
 
+    @GetMapping("users")
+    public List<User> findAllUsers(){
+        return userService.findAllUsers();
+    }
+
 
     //both of this and the one above are the same end point /users/'variable'
 //    @GetMapping("/{username}")
