@@ -1,5 +1,6 @@
 package com.swaggarelli.pizzeria.controllers;
 
+import com.swaggarelli.pizzeria.models.DTO.RequestResponse.EditRequest;
 import com.swaggarelli.pizzeria.models.User;
 import com.swaggarelli.pizzeria.services.UserService;
 import lombok.RequiredArgsConstructor;
@@ -14,11 +15,13 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping
+    @PostMapping("/register")
     public User createUser(@RequestBody User user){
-        return userService.createUser(user);
+        return userService.createUpdateUser(user);
     }
 
+    @PostMapping ("/{userID}/edit")
+    public User updateUser(@RequestBody User user){return userService.createUpdateUser(user);}
 
     // GET localhost:8080/users/1 -> getByUserId
     @GetMapping("/{userId}")
@@ -26,9 +29,11 @@ public class UserController {
         return userService.findUserById(userId);
     }
 
-    @GetMapping("/{username}")
-    public User findUserByUsername(@PathVariable String username) {
-        return userService.findUserByUsername(username);
-    }
+
+    //both of this and the one above are the same end point /users/'variable'
+//    @GetMapping("/{username}")
+//    public User findUserByUsername(@PathVariable String username) {
+//        return userService.findUserByUsername(username);
+//    }
 
 }
