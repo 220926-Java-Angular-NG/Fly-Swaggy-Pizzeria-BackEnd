@@ -1,10 +1,8 @@
 package com.swaggarelli.pizzeria.controllers;
 
 
-import com.swaggarelli.pizzeria.models.Cart;
-import com.swaggarelli.pizzeria.models.User;
+import com.swaggarelli.pizzeria.models.DTO.Cart;
 import com.swaggarelli.pizzeria.services.CartService;
-import com.swaggarelli.pizzeria.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

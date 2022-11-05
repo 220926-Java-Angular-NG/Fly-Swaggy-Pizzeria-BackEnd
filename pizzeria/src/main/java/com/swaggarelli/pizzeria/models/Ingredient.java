@@ -27,6 +27,10 @@ public class Ingredient {
     @NotNull
     private int stock;
 
+    public Ingredient(Integer i) {
+        this.inventoryId = i;
+    }
+
     public boolean setStock(int stock) { // simply throw a false if the stock ever goes below zero
         this.stock = stock;
         return this.stock >= 0;

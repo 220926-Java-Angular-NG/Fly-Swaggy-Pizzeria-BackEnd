@@ -1,38 +1,48 @@
 package com.swaggarelli.pizzeria.services;
 
 import com.swaggarelli.pizzeria.models.*;
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Base;
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Sauce;
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Topping;
 import com.swaggarelli.pizzeria.repos.IngredientRepo;
-import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class IngredientService {
+    @Autowired
     private final IngredientRepo ingredientRepo;
 
     public IngredientService(IngredientRepo ingredientRepo) {
         this.ingredientRepo = ingredientRepo;
         for(Base ing:Base.values()){ // Generate the Inventory Rows
-            Ingredient temp = new Ingredient();
-            temp.setItem(ing.getName());
-            temp.setStock(1);
-            temp.setInventoryId(ing.getID());
-            createUpdateIngredient(temp);
+            if(FindByID(ing.getID()).getInventoryId() == -1) {
+                Ingredient temp = new Ingredient();
+                temp.setItem(ing.getName());
+                temp.setStock(30);
+                temp.setInventoryId(ing.getID());
+                createUpdateIngredient(temp);
+            }
         }
         for(Sauce ing:Sauce.values()){
-            Ingredient temp = new Ingredient();
-            temp.setItem(ing.getName());
-            temp.setStock(1);
-            temp.setInventoryId(ing.getID());
-            createUpdateIngredient(temp);
+            if(FindByID(ing.getID()).getInventoryId() == -1) {
+                Ingredient temp = new Ingredient();
+                temp.setItem(ing.getName());
+                temp.setStock(20);
+                temp.setInventoryId(ing.getID());
+                createUpdateIngredient(temp);
+            }
         }
         for(Topping ing: Topping.values()){
-            Ingredient temp = new Ingredient();
-            temp.setItem(ing.getName());
-            temp.setStock(1);
-            temp.setInventoryId(ing.getID());
-            createUpdateIngredient(temp);
+            if(FindByID(ing.getID()).getInventoryId() == -1) {
+                Ingredient temp = new Ingredient();
+                temp.setItem(ing.getName());
+                temp.setStock(10);
+                temp.setInventoryId(ing.getID());
+                createUpdateIngredient(temp);
+            }
         }
     }
 
@@ -52,6 +62,7 @@ public class IngredientService {
         return ingredientRepo.findByItem(name)
                 .orElseThrow(() -> new RuntimeException("Ingredient not found with name: " + name));
     }
+    public Ingredient FindByID(Integer id){return ingredientRepo.findById(id).orElse(new Ingredient(-1));}
     public List<Ingredient> findAll(){
         return ingredientRepo.findAll();
     }
