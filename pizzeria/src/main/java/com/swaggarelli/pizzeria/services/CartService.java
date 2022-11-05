@@ -7,12 +7,14 @@ import com.swaggarelli.pizzeria.models.DTO.ENUM.Ingredients;
 import com.swaggarelli.pizzeria.models.DTO.ENUM.Topping;
 import com.swaggarelli.pizzeria.models.DTO.Pizza;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class CartService {
+    @Autowired
     private final IngredientService ingredientService;
 
 
