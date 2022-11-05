@@ -1,4 +1,4 @@
-package com.swaggarelli.pizzeria.models.DTO;
+package com.swaggarelli.pizzeria.models.DTO.RequestResponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginResponse {
-    int id;
+    Long id;
 }

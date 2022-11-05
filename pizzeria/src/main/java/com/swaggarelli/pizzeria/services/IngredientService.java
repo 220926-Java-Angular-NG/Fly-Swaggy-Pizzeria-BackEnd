@@ -18,21 +18,21 @@ public class IngredientService {
         for(Base ing:Base.values()){ // Generate the Inventory Rows
             Ingredient temp = new Ingredient();
             temp.setItem(ing.getName());
-            temp.setStock(1);
+            temp.setStock(30);
             temp.setInventoryId(ing.getID());
             createUpdateIngredient(temp);
         }
         for(Sauce ing:Sauce.values()){
             Ingredient temp = new Ingredient();
             temp.setItem(ing.getName());
-            temp.setStock(1);
+            temp.setStock(20);
             temp.setInventoryId(ing.getID());
             createUpdateIngredient(temp);
         }
         for(Topping ing: Topping.values()){
             Ingredient temp = new Ingredient();
             temp.setItem(ing.getName());
-            temp.setStock(1);
+            temp.setStock(10);
             temp.setInventoryId(ing.getID());
             createUpdateIngredient(temp);
         }

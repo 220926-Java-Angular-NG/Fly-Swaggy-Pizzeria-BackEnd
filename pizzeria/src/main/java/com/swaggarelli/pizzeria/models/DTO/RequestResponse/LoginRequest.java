@@ -1,4 +1,4 @@
-package com.swaggarelli.pizzeria.models.DTO;
+package com.swaggarelli.pizzeria.models.DTO.RequestResponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

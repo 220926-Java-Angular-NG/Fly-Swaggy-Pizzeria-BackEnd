@@ -1,5 +1,6 @@
 package com.swaggarelli.pizzeria.controllers;
 
+import com.swaggarelli.pizzeria.models.DTO.RequestResponse.EditRequest;
 import com.swaggarelli.pizzeria.models.User;
 import com.swaggarelli.pizzeria.services.UserService;
 import lombok.RequiredArgsConstructor;
@@ -28,9 +29,11 @@ public class UserController {
         return userService.findUserById(userId);
     }
 
-    @GetMapping("/{username}")
-    public User findUserByUsername(@PathVariable String username) {
-        return userService.findUserByUsername(username);
-    }
+
+    //both of this and the one above are the same end point /users/'variable'
+//    @GetMapping("/{username}")
+//    public User findUserByUsername(@PathVariable String username) {
+//        return userService.findUserByUsername(username);
+//    }
 
 }
