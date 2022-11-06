@@ -42,15 +42,15 @@ public class CartService {
             switch (pie.getSize()){ // check how much Dough and Cheese is going to be needed
                 case SMALL:
                     if(!ing.get(type.getID()-1).setStock(ing.get(type.getID()-1).getStock() - 1)) return new Cart();
-                    if(!ing.get(cheese.getID()-1).setStock(ing.get(cheese.getID()).getStock()-1)) return new Cart();
+                    if(!ing.get(cheese.getID()-1).setStock(ing.get(cheese.getID()-1).getStock() - 1)) return new Cart();
                     break;
                 case MEDIUM:
                     if(!ing.get(type.getID()-1).setStock(ing.get(type.getID()-1).getStock() - 2)) return new Cart();
-                    if(!ing.get(cheese.getID()-1).setStock(ing.get(cheese.getID()-1).getStock()-2)) return new Cart();
+                    if(!ing.get(cheese.getID()-1).setStock(ing.get(cheese.getID()-1).getStock() - 2)) return new Cart();
                     break;
                 case LARGE:
                     if(!ing.get(type.getID()-1).setStock(ing.get(type.getID()-1).getStock() - 3)) return new Cart();
-                    if(!ing.get(cheese.getID()-1).setStock(ing.get(cheese.getID()-1).getStock()-3)) return new Cart();
+                    if(!ing.get(cheese.getID()-1).setStock(ing.get(cheese.getID()-1).getStock() - 3)) return new Cart();
                     break;
             }
             type = pie.getSauce();

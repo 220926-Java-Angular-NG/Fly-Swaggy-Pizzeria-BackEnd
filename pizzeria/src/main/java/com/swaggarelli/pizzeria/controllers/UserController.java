@@ -29,6 +29,12 @@ public class UserController {
         return userService.findUserById(userId);
     }
 
+
+    @GetMapping("/users")
+    public List<User> findAllUsers(){
+        return userService.findAllUsers();
+    }
+    
     @PostMapping ("/login")
     public User loginUser(@RequestBody String credentials){
         int space = credentials.indexOf(" ");
