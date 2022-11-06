@@ -12,5 +12,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Cart {
+
     private Pizza[] pizzas;
 }
