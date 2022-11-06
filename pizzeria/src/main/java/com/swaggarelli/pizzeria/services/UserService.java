@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -27,9 +29,17 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("User not found with id: " + userId));
     }
 
+    public List<User> findAllUsers(){
+        return userRepo.findAll();
+    }
+
     public User findUserByUsername(String username){
         return userRepo.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("User not found with username: " + username));
     }
 
+    public User login(String username, String password) {
+        return userRepo.findByUsernameAndPassword(username, password)
+                .orElseThrow( () -> new RuntimeException("Please verify your username or password"));
+    }
 }
