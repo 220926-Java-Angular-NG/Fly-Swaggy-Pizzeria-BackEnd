@@ -32,4 +32,8 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("User not found with username: " + username));
     }
 
+    public User login(String username, String password) {
+        return userRepo.findByUsernameAndPassword(username, password)
+                .orElseThrow( () -> new RuntimeException("Please verify your username or password"));
+    }
 }

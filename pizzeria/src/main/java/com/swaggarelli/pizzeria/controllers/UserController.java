@@ -29,6 +29,15 @@ public class UserController {
         return userService.findUserById(userId);
     }
 
+    @PostMapping ("/login")
+    public User loginUser(@RequestBody String credentials){
+        int space = credentials.indexOf(" ");
+        String username = credentials.substring(0, space);
+        String password = credentials.substring(space + 1);
+
+        return userService.login(username, password);
+    }
+
 
     //both of this and the one above are the same end point /users/'variable'
 //    @GetMapping("/{username}")
