@@ -12,6 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Cart {
-
-    private Pizza[] pizzas;
+    private Long ID = -1L;
+    private Pizza[] pizzas = {};
+    private String total = "-1";
 }
