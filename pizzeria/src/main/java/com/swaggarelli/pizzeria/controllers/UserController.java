@@ -20,7 +20,7 @@ public class UserController {
         return userService.createUpdateUser(user);
     }
 
-    @PostMapping ("/{userID}/edit")
+    @PutMapping ("/{userId}/myProfile")
     public User updateUser(@RequestBody User user){return userService.createUpdateUser(user);}
 
     // GET localhost:8080/users/1 -> getByUserId
