@@ -1,6 +1,5 @@
 package com.swaggarelli.pizzeria.services;
 
-import com.swaggarelli.pizzeria.models.DTO.RequestResponse.EditRequest;
 import com.swaggarelli.pizzeria.models.User;
 import com.swaggarelli.pizzeria.repos.UserRepo;
 import lombok.RequiredArgsConstructor;

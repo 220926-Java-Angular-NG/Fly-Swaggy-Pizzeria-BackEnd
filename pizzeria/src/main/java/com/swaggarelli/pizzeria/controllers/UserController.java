@@ -1,6 +1,5 @@
 package com.swaggarelli.pizzeria.controllers;
 
-import com.swaggarelli.pizzeria.models.DTO.RequestResponse.EditRequest;
 import com.swaggarelli.pizzeria.models.User;
 import com.swaggarelli.pizzeria.services.UserService;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +19,7 @@ public class UserController {
         return userService.createUpdateUser(user);
     }
 
-    @PutMapping ("/{userId}/myProfile")
+    @PutMapping ("/myProfile")
     public User updateUser(@RequestBody User user){return userService.createUpdateUser(user);}
 
     // GET localhost:8080/users/1 -> getByUserId
@@ -34,7 +33,8 @@ public class UserController {
     public List<User> findAllUsers(){
         return userService.findAllUsers();
     }
-    
+
+
     @PostMapping ("/login")
     public User loginUser(@RequestBody String credentials){
         int space = credentials.indexOf(" ");
