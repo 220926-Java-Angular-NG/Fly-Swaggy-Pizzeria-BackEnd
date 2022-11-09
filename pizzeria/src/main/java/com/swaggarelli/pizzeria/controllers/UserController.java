@@ -48,6 +48,15 @@ public class UserController {
         return userService.login(username, password);
     }
 
+    @PostMapping ("/verify")
+    public User verifyUser(@RequestBody String credentials){
+        int space = credentials.indexOf(" ");
+        String username = credentials.substring(0, space);
+        String email = credentials.substring(space + 1);
+
+        return userService.verify(username, email);
+    }
+
 
     //both of this and the one above are the same end point /users/'variable'
 //    @GetMapping("/{username}")
