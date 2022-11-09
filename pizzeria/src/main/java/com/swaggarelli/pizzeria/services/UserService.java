@@ -42,4 +42,9 @@ public class UserService {
         return userRepo.findByUsernameAndPassword(username, password)
                 .orElseThrow( () -> new RuntimeException("Please verify your username or password"));
     }
+
+    public User verify(String username, String email) {
+        return userRepo.findByUsernameAndEmail(username, email)
+                .orElseThrow( () -> new RuntimeException("Please verify your username or email"));
+    }
 }
