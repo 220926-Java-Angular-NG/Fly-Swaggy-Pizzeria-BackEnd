@@ -1,6 +1,7 @@
-package com.swaggarelli.pizzeria.models;
+package com.swaggarelli.pizzeria.models.DTO;
 
 
+import com.swaggarelli.pizzeria.models.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Cart {
-
-    private User customer;
-    private Pizza[] pizzas;
+    private Long ID = -1L;
+    private Pizza[] pizzas = {};
+    private String total = "-1";
 }

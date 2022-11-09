@@ -1,5 +1,7 @@
-package com.swaggarelli.pizzeria.models;
+package com.swaggarelli.pizzeria.models.DTO;
 
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Sauce;
+import com.swaggarelli.pizzeria.models.DTO.ENUM.Topping;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,19 +25,11 @@ public class Pizza {
 
 
 
-    private enum Size{
+    public enum Size{
         SMALL, MEDIUM, LARGE
     }
 
     private enum Crust{
         REGULAR, THIN, NO_CRUST
-    }
-
-    private enum Sauce{
-        TOMATO, BBQ, ALFREDO, BUFFALO
-    }
-
-    private enum Topping{
-        PEPPERONI, SAUSAGE, MUSHROOMS, BACON, CHICKEN, ONIONS, BELL_PEPPERS, PINEAPPLE, JALAPENOS, HAM, FS_SEASONING
     }
 }
